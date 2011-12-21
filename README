@@ -1,0 +1,3 @@
+Sudoku_CPP is a console based Sudoku game I wrote in 2008 after taking CS161, it doesn't use ncurses or something sophisticated, it just clears the screen and prints the current state of the program. It's iostream based.
+
+I'll have to learn ncurses before I can make this better, for now, you can pretend it's 1985.
