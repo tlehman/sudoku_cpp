@@ -19,4 +19,8 @@ Goals:
   Implement a solver (17 clues required) 
   Implement a front-end, using ncurses or something not console based.
   Make more Object Oriented
+   (for Grid class)
+    - Remove cursor member and make into parameter, this is more 
+      convenient for automated solving algorithms
+    - Remove print function and return an ostream object reference
   Make functional version (just for fun)
