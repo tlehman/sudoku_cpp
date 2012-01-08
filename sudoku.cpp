@@ -5,6 +5,13 @@
 #include "alphanum.cpp"
 using namespace std;
 
+/* This is the interface, it's a loop that 
+     - reads the last key the user pressed and 
+        - if key is a letter, pass to Grid::move function
+        - if key is a number, pass to Grid::put function
+     - clears input buffer for next iteration
+     - quits if Q is entered
+ */
 int main()
 {
     Grid sugrid;    // Instantiate the Grid

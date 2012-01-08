@@ -4,7 +4,19 @@ It's iostream based.
 
 I'll have to learn ncurses before I can make this better, for now, you can pretend it's 1985.
 
+Update (Sat Jan  7 20:06:26 PST 2012):
+    It was announced recently on Technology Review's arXiv Blog that the problem of the 
+    minimum number of initial values (clues) in a sudoku grid required for the grid to 
+    have a unique solution is 17. 
+    
+    For more details, see here: http://arxiv.org/abs/1201.0749  
+
+    This re-kindled my interest in this sudoku program I wrote a few years back. I intended 
+    it to be a solver, but it ended up being only a live terminal game. I am going to make 
+    a solver, and it will require 17 initial values (with a random choice option)
+
 Goals:
+  Implement a solver (17 clues required) 
   Implement a front-end, using ncurses or something not console based.
   Make more Object Oriented
   Make functional version (just for fun)

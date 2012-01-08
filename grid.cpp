@@ -1,3 +1,11 @@
+/** Author: Tobi Lehman
+   Created: January 2008
+Dusted off: January 2012
+
+    A Grid object represents a 9x9 sudoku grid, it has 9x9=81 cells, and a cursor, 
+    which represents the current position in the grid.
+    
+ */
 #include <iostream>
 using namespace std;
 
@@ -11,7 +19,9 @@ class Grid
         void init();
         int put(int v);
         void move(char direction);
-        bool check_vert(int v);
+
+        // sudoku game logic
+        bool check_vert(int v);     // determines whether 
         bool check_horiz(int v);
         bool check_block(int v);
 };
@@ -101,6 +111,7 @@ void Grid::move(char direction)
 
 int Grid::put(int v)
 {
+    // ASCII offset
     if(v > 0) v -= 48;
     int o = grid[cursor[1]][cursor[0]];
     grid[cursor[1]][cursor[0]] = v;
@@ -117,19 +128,24 @@ int Grid::put(int v)
     return 0;
 }
 
+/* check_vert returns true the value v doesn't appear in the vertical line 
+   on which cursor resides */
 bool Grid::check_vert(int v)
 {
     bool r = false;
     int w = 0;
     for(int i = 0; i <= 8; ++i)
     {
-	if(grid[cursor[1]][i] == v) ++w;
+	    if(grid[cursor[1]][i] == v) 
+            ++w;
     }
     if(w > 1) r = true;
     else r = false;
     return r;
 }
 
+/* check_horiz returns true if the value v doesn't appear in the horizontal line 
+   on which cursor resides */
 bool Grid::check_horiz(int v)
 {
     bool r = false;
@@ -143,6 +159,8 @@ bool Grid::check_horiz(int v)
     return r;
 }
 
+/* check_block returns true if the value v can be set at the position specified in 
+   cursor and then sets the value, it returns false if it is not a valid play */
 bool Grid::check_block(int v)
 {
     bool r = false;
